@@ -9,61 +9,56 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --bg:        #0a0e27;
-      --card:      #111b3c;
-      --muted-bg:  #1a2548;
-      --text:      #ffffff;
-      --text-secondary: #b0b9d4;
-      --accent:    #ffa500;
-      --accent-light: #ffb81c;
-      --border:    #2a3f5f;
-      --success:   #4ade80;
+      --bg:        #0a0a0a;
+      --card:      #141414;
+      --muted-bg:  #1f1f1f;
+      --text:      #f2f2f2;
+      --muted:     #8c8c8c;
+      --accent:    #faa807;
+      --border:    #292929;
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
-      background: linear-gradient(135deg, var(--bg) 0%, #0f1628 100%);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
       color: var(--text);
       min-height: 100vh;
-      line-height: 1.6;
     }
 
     /* ── HEADER ── */
     header {
-      padding: 20px 28px;
+      padding: 18px 28px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       border-bottom: 1px solid var(--border);
-      max-width: 1200px;
+      max-width: 960px;
       margin: 0 auto;
       width: 100%;
-      background: rgba(10, 14, 39, 0.8);
-      backdrop-filter: blur(8px);
-      position: sticky;
-      top: 0;
-      z-index: 100;
     }
 
     .header-logo {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
     }
 
     .header-logo img {
-      width: 48px;
-      height: 48px;
+      width: 44px;
+      height: 44px;
+      max-width: 44px;
+      max-height: 44px;
       object-fit: contain;
-      border-radius: 8px;
       display: block;
       flex-shrink: 0;
+      /* Applied KTH gold branding filter */
+      filter: brightness(0) invert(0.65) sepia(1) saturate(5) hue-rotate(5deg);
     }
 
     .logo-text {
-      font-size: 18px;
+      font-size: 17px;
       font-weight: 800;
-      letter-spacing: -0.5px;
+      letter-spacing: -0.3px;
       color: var(--text);
     }
 
@@ -72,509 +67,342 @@
     .btn-small {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
-      color: #000;
+      gap: 7px;
+      background: var(--accent);
+      color: var(--bg);
       font-size: 13px;
-      font-weight: 700;
-      padding: 11px 22px;
+      font-weight: 800;
+      padding: 10px 18px;
       border-radius: 8px;
       text-decoration: none;
-      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: opacity 0.15s;
       white-space: nowrap;
-      box-shadow: 0 4px 15px rgba(255, 165, 0, 0.25);
     }
 
-    .btn-small:hover { 
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(255, 165, 0, 0.35);
-    }
+    .btn-small:hover { opacity: 0.88; }
 
     /* ── HERO ── */
     .hero {
       text-align: center;
-      padding: 100px 24px 80px;
-      max-width: 900px;
+      padding: 80px 24px 60px;
+      max-width: 740px;
       margin: 0 auto;
-      position: relative;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at center, rgba(255, 165, 0, 0.08) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .hero-content {
-      position: relative;
-    }
-
-    .hero-icon {
-      width: 140px;
-      height: 140px;
-      margin: 0 auto 40px;
-      display: block;
-      object-fit: contain;
-      filter: drop-shadow(0 8px 32px rgba(255, 165, 0, 0.15));
     }
 
     .badge {
       display: inline-block;
-      background: rgba(255, 165, 0, 0.12);
-      border: 1px solid rgba(255, 165, 0, 0.5);
-      color: var(--accent-light);
+      background: rgba(250,168,7,0.1);
+      border: 1px solid rgba(250,168,7,0.4);
+      color: var(--accent);
       font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 1.2px;
-      padding: 8px 18px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      padding: 6px 16px;
       border-radius: 100px;
-      margin-bottom: 32px;
+      margin-bottom: 30px;
       text-transform: uppercase;
     }
 
     h1 {
-      font-size: clamp(36px, 8vw, 62px);
+      font-size: clamp(30px, 6vw, 52px);
       font-weight: 900;
-      line-height: 1.1;
-      letter-spacing: -2px;
-      margin-bottom: 24px;
+      line-height: 1.08;
+      letter-spacing: -1.5px;
+      margin-bottom: 20px;
       color: var(--text);
-      background: linear-gradient(135deg, var(--text) 0%, var(--text-secondary) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
     }
 
     h1 em { font-style: normal; color: var(--accent); }
 
     .tagline-primary {
-      font-size: clamp(16px, 2.5vw, 22px);
-      color: var(--accent-light);
+      font-size: clamp(15px, 2.2vw, 19px);
+      color: var(--accent);
       font-weight: 600;
       font-style: italic;
-      line-height: 1.6;
-      margin-bottom: 16px;
+      line-height: 1.5;
+      margin-bottom: 10px;
     }
 
     .tagline-secondary {
-      font-size: clamp(14px, 1.9vw, 18px);
-      color: var(--text-secondary);
-      margin-bottom: 48px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
+      font-size: clamp(13px, 1.8vw, 16px);
+      color: var(--muted);
+      margin-bottom: 40px;
     }
 
     .cta-group {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 16px;
-      margin-bottom: 20px;
+      gap: 12px;
     }
 
     .btn-primary {
       display: inline-flex;
       align-items: center;
-      justify-content: center;
-      gap: 12px;
-      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
-      color: #000;
-      font-size: 15px;
-      font-weight: 800;
-      padding: 16px 42px;
+      gap: 10px;
+      background: var(--accent);
+      color: var(--bg);
+      font-size: 16px;
+      font-weight: 900;
+      padding: 16px 36px;
       border-radius: 10px;
       text-decoration: none;
-      box-shadow: 0 8px 32px rgba(255, 165, 0, 0.35);
-      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-      border: none;
-      cursor: pointer;
+      box-shadow: 0 6px 32px rgba(250,168,7,0.35);
+      transition: transform 0.15s, box-shadow 0.15s, opacity 0.15s;
     }
 
     .btn-primary:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 48px rgba(255, 165, 0, 0.5);
-    }
-
-    .btn-primary:active {
-      transform: translateY(-1px);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 40px rgba(250,168,7,0.5);
+      opacity: 0.92;
     }
 
     .btn-web {
       display: inline-flex;
       align-items: center;
-      justify-content: center;
-      gap: 10px;
-      background: rgba(255, 165, 0, 0.1);
-      border: 1.5px solid var(--accent);
-      color: var(--accent);
-      font-size: 15px;
-      font-weight: 700;
-      padding: 14px 32px;
+      gap: 8px;
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 600;
+      padding: 12px 26px;
       border-radius: 10px;
       text-decoration: none;
-      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: border-color 0.15s, color 0.15s;
     }
 
     .btn-web:hover {
-      background: rgba(255, 165, 0, 0.15);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(255, 165, 0, 0.2);
+      border-color: var(--accent);
+      color: var(--accent);
     }
 
     .free-note {
-      font-size: 13px;
-      color: var(--text-secondary);
-      opacity: 0.7;
+      font-size: 12px;
+      color: var(--muted);
+      opacity: 0.6;
     }
 
     /* ── SCALES SECTION ── */
     .scales-section {
       text-align: center;
-      padding: 80px 24px;
+      padding: 64px 24px 60px;
       position: relative;
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
-      background: linear-gradient(135deg, rgba(17, 27, 60, 0.8) 0%, rgba(26, 37, 72, 0.6) 100%);
-      backdrop-filter: blur(10px);
+      background: var(--card);
     }
 
     .scales-section::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse at center, rgba(255, 165, 0, 0.06) 0%, transparent 70%);
+      background: radial-gradient(ellipse at center, rgba(250,168,7,0.05) 0%, transparent 70%);
       pointer-events: none;
     }
 
     .scales-inner {
-      max-width: 600px;
+      max-width: 520px;
       margin: 0 auto;
       position: relative;
     }
 
     .scales-logo {
-      width: 160px;
-      height: 160px;
+      width: 120px;
+      height: 120px;
       object-fit: contain;
-      margin: 0 auto 32px;
+      margin: 0 auto 24px;
       display: block;
-      filter: drop-shadow(0 12px 40px rgba(255, 165, 0, 0.2));
+      /* Applied KTH gold branding filter */
+      filter: brightness(0) invert(0.65) sepia(1) saturate(5) hue-rotate(5deg);
     }
 
     .scales-slogan {
-      font-size: clamp(24px, 4vw, 36px);
-      font-weight: 900;
-      letter-spacing: -1px;
+      font-size: clamp(20px, 3.5vw, 30px);
+      font-weight: 800;
+      letter-spacing: -0.5px;
       line-height: 1.2;
-      color: var(--text);
-      margin-bottom: 16px;
-    }
-
-    .scales-description {
-      font-size: 16px;
-      color: var(--text-secondary);
-      line-height: 1.8;
+      color: var(--accent);
     }
 
     /* ── STATS ── */
     .stats-wrap { border-bottom: 1px solid var(--border); }
 
     .stats {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 32px;
-      padding: 64px 24px;
-      max-width: 1000px;
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+      padding: 52px 24px;
+      max-width: 760px;
       margin: 0 auto;
     }
 
-    .stat { 
-      text-align: center;
-      padding: 24px;
-      background: linear-gradient(135deg, rgba(255, 165, 0, 0.05) 0%, rgba(255, 165, 0, 0.02) 100%);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      transition: all 0.3s ease;
-    }
-
-    .stat:hover {
-      border-color: var(--accent);
-      transform: translateY(-4px);
-      background: linear-gradient(135deg, rgba(255, 165, 0, 0.1) 0%, rgba(255, 165, 0, 0.05) 100%);
-    }
+    .stat { text-align: center; }
 
     .stat-number {
-      font-size: 42px;
+      font-size: 36px;
       font-weight: 900;
       letter-spacing: -1px;
-      color: var(--accent-light);
-      margin-bottom: 8px;
+      color: var(--accent);
     }
 
     .stat-label {
-      font-size: 13px;
-      color: var(--text-secondary);
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 5px;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 0.8px;
       font-weight: 600;
     }
 
     /* ── FEATURES ── */
     .features {
-      max-width: 1100px;
+      max-width: 840px;
       margin: 0 auto;
-      padding: 80px 24px;
+      padding: 64px 24px;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 14px;
     }
 
     .feature-card {
-      background: linear-gradient(135deg, var(--card) 0%, rgba(17, 27, 60, 0.5) 100%);
+      background: var(--card);
       border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 32px 28px;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .feature-card::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(255, 165, 0, 0.08) 0%, transparent 100%);
-      opacity: 0;
-      transition: opacity 0.3s ease;
+      border-left: 3px solid var(--accent);
+      border-radius: 10px;
+      padding: 26px 22px;
+      transition: border-color 0.2s, transform 0.2s;
     }
 
     .feature-card:hover {
       border-color: var(--accent);
-      transform: translateY(-8px);
-      background: linear-gradient(135deg, rgba(17, 27, 60, 0.9) 0%, rgba(26, 37, 72, 0.6) 100%);
-      box-shadow: 0 12px 48px rgba(255, 165, 0, 0.15);
+      transform: translateY(-3px);
     }
 
-    .feature-card:hover::before {
-      opacity: 1;
-    }
-
-    .feature-inner {
-      position: relative;
-      z-index: 1;
-    }
-
-    .feature-icon { 
-      font-size: 40px; 
-      margin-bottom: 16px;
-      display: inline-block;
-      padding: 12px;
-      background: rgba(255, 165, 0, 0.1);
-      border-radius: 10px;
-    }
+    .feature-icon { font-size: 26px; margin-bottom: 14px; }
 
     .feature-title {
-      font-size: 18px;
-      font-weight: 800;
-      margin-bottom: 12px;
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 8px;
       color: var(--text);
     }
 
     .feature-desc {
-      font-size: 14px;
-      color: var(--text-secondary);
-      line-height: 1.8;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.7;
     }
 
     /* ── STATES ── */
     .states {
       text-align: center;
-      padding: 80px 24px 72px;
-      max-width: 900px;
-      margin: 0 auto;
+      padding: 0 24px 72px;
     }
 
     .states h2 {
-      font-size: 28px;
-      font-weight: 900;
-      margin-bottom: 12px;
-      color: var(--text);
-      letter-spacing: -1px;
-    }
-
-    .states-description {
-      font-size: 16px;
-      color: var(--text-secondary);
-      margin-bottom: 32px;
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 18px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
     .state-pills {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 10px;
-      max-width: 600px;
+      gap: 8px;
+      max-width: 480px;
       margin: 0 auto;
     }
 
     .pill {
-      background: linear-gradient(135deg, rgba(255, 165, 0, 0.15) 0%, rgba(255, 165, 0, 0.05) 100%);
-      border: 1.5px solid var(--accent);
-      padding: 10px 20px;
+      background: var(--muted-bg);
+      border: 1px solid var(--border);
+      padding: 8px 18px;
       border-radius: 100px;
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 800;
       color: var(--accent);
-      letter-spacing: 0.5px;
-      transition: all 0.25s ease;
+      letter-spacing: 0.8px;
+      transition: background 0.15s, border-color 0.15s;
       cursor: default;
     }
 
     .pill:hover {
-      background: rgba(255, 165, 0, 0.25);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 16px rgba(255, 165, 0, 0.2);
+      background: rgba(250,168,7,0.08);
+      border-color: var(--accent);
     }
 
     /* ── BOTTOM CTA ── */
     .bottom-cta {
       text-align: center;
-      padding: 88px 24px 100px;
-      background: linear-gradient(135deg, var(--card) 0%, rgba(17, 27, 60, 0.6) 100%);
+      padding: 72px 24px 88px;
+      background: var(--card);
       border-top: 1px solid var(--border);
       position: relative;
-      overflow: hidden;
     }
 
     .bottom-cta::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse at 50% 0%, rgba(255, 165, 0, 0.08) 0%, transparent 65%);
+      background: radial-gradient(ellipse at 50% 0%, rgba(250,168,7,0.06) 0%, transparent 65%);
       pointer-events: none;
     }
 
     .cta-shield {
-      width: 100px;
-      height: 100px;
+      width: 68px;
+      height: 68px;
+      max-width: 68px;
+      max-height: 68px;
       object-fit: contain;
       border-radius: 14px;
-      margin-bottom: 28px;
+      margin-bottom: 22px;
       display: block;
       margin-left: auto;
       margin-right: auto;
       position: relative;
-      filter: drop-shadow(0 8px 24px rgba(255, 165, 0, 0.2));
+      /* Applied KTH gold branding filter */
+      filter: brightness(0) invert(0.65) sepia(1) saturate(5) hue-rotate(5deg);
     }
 
     .bottom-cta h2 {
-      font-size: clamp(28px, 5vw, 44px);
+      font-size: clamp(22px, 4vw, 36px);
       font-weight: 900;
-      margin-bottom: 16px;
-      letter-spacing: -1px;
+      margin-bottom: 12px;
+      letter-spacing: -0.8px;
       color: var(--text);
       position: relative;
     }
 
     .bottom-cta p {
-      color: var(--text-secondary);
-      margin-bottom: 40px;
-      font-size: 17px;
+      color: var(--muted);
+      margin-bottom: 34px;
+      font-size: 15px;
       position: relative;
-      max-width: 500px;
-      margin-left: auto;
-      margin-right: auto;
     }
 
     /* ── FOOTER ── */
     footer {
       text-align: center;
-      padding: 28px 24px;
-      font-size: 13px;
-      color: var(--text-secondary);
+      padding: 22px;
+      font-size: 12px;
+      color: var(--muted);
+      opacity: 0.5;
       border-top: 1px solid var(--border);
-      background: rgba(10, 14, 39, 0.8);
     }
 
-    footer a { 
-      color: var(--accent); 
-      opacity: 0.8; 
-      text-decoration: none;
-      transition: opacity 0.2s;
-    }
-
-    footer a:hover { opacity: 1; }
+    footer a { color: var(--accent); opacity: 0.6; text-decoration: none; }
 
     /* ── RESPONSIVE ── */
-    @media (max-width: 768px) {
-      .hero {
-        padding: 80px 20px 60px;
-      }
-
-      .hero-icon {
-        width: 100px;
-        height: 100px;
-        margin-bottom: 30px;
-      }
-
-      h1 {
-        font-size: 40px;
-      }
-
-      .stats {
-        gap: 16px;
-        padding: 48px 16px;
-      }
-
-      .scales-logo { 
-        width: 120px; 
-        height: 120px; 
-      }
-
-      header { 
-        padding: 16px 20px; 
-      }
-
-      .features {
-        grid-template-columns: 1fr;
-      }
-    }
-
     @media (max-width: 480px) {
-      header {
-        flex-direction: column;
-        gap: 12px;
-      }
-
-      .header-logo {
-        width: 100%;
-        justify-content: center;
-      }
-
-      .btn-small {
-        width: 100%;
-        justify-content: center;
-      }
-
-      h1 {
-        font-size: 32px;
-      }
-
-      .stats {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .state-pills {
-        gap: 8px;
-      }
-
-      .pill {
-        padding: 8px 16px;
-        font-size: 12px;
-      }
+      .stats { gap: 28px; }
+      .scales-logo { width: 90px; height: 90px; }
+      header { padding: 16px 18px; }
     }
   </style>
 </head>
@@ -582,37 +410,34 @@
 
   <header>
     <div class="header-logo">
-      <img src="./shield.jpg" alt="Aussie Rights Kit Logo" />
+      <img src="/public/logo.png" alt="KTH ARK Logo" />
       <div class="logo-text">Aussie<span>Rights</span>Kit</div>
     </div>
     <a class="btn-small" href="https://play.google.com/store/apps/details?id=com.keepthemhonest.au" target="_blank" rel="noopener">
-      ↓ Get App Free
+      &#9654; Download Free
     </a>
   </header>
 
   <section class="hero">
-    <div class="hero-content">
-      <img class="hero-icon" src="./scales.png" alt="Scales of Justice" />
-      <div class="badge">🇦🇺 Free &middot; All 8 States & Territories</div>
-      <h1>Know your rights <em>before</em> you need them</h1>
-      <p class="tagline-primary">Free. Plain English. State-by-state.</p>
-      <p class="tagline-secondary">When police stop you, the law is on your side — if you know it. This app gives you plain-English guides to your rights in every Australian state and territory.</p>
-      <div class="cta-group">
-        <a class="btn-primary" href="https://play.google.com/store/apps/details?id=com.keepthemhonest.au" target="_blank" rel="noopener">
-          ↓ Download on Google Play
-        </a>
-        <a class="btn-web" href="https://keepthemhonestau.app" target="_blank" rel="noopener">
-          Open Web App →
-        </a>
-      </div>
-      <span class="free-note">Free download &middot; No account required &middot; No ads</span>
+    <div class="badge">&#127462;&#127482; Free &middot; All 8 States &amp; Territories</div>
+    <h1>Know your rights<br /><em>before</em> you need them</h1>
+    <p class="tagline-primary">&ldquo;When you know the rules, the game gets easier.&rdquo;</p>
+    <p class="tagline-secondary">Know your rights when interacting with police.</p>
+    <div class="cta-group">
+      <a class="btn-primary" href="https://play.google.com/store/apps/details?id=com.keepthemhonest.au" target="_blank" rel="noopener">
+        &#9654; Download on Google Play
+      </a>
+      <a class="btn-web" href="https://keepthemhonestau.app" target="_blank" rel="noopener">
+        Open Web App &rarr;
+      </a>
+      <span class="free-note">Free download &middot; No account required</span>
     </div>
   </section>
 
   <section class="scales-section">
     <div class="scales-inner">
+      <img class="scales-logo" src="/public/logo.png" alt="Scales of Justice" />
       <p class="scales-slogan">Re-balancing the scales of justice.</p>
-      <p class="scales-description">Legal knowledge shouldn't be locked behind paywalls or legal fees. Everyone deserves to know their rights, plainly explained.</p>
     </div>
   </section>
 
@@ -639,52 +464,39 @@
 
   <section class="features">
     <div class="feature-card">
-      <div class="feature-inner">
-        <div class="feature-icon">⚖️</div>
-        <div class="feature-title">Deep-Dive Rights</div>
-        <div class="feature-desc">CAN DO / CAN'T DO breakdowns for every police interaction — traffic stops, searches, arrests, protests and more.</div>
-      </div>
+      <div class="feature-icon">&#9878;&#65039;</div>
+      <div class="feature-title">Deep-Dive Rights</div>
+      <div class="feature-desc">CAN DO / CAN'T DO breakdowns for every police interaction — traffic stops, searches, arrests, protests and more.</div>
     </div>
     <div class="feature-card">
-      <div class="feature-inner">
-        <div class="feature-icon">🎬</div>
-        <div class="feature-title">AI Roleplay Scenarios</div>
-        <div class="feature-desc">Practice real situations with AI before they happen. Traffic stops, drug searches, domestic calls — 108 scenarios.</div>
-      </div>
+      <div class="feature-icon">&#127917;</div>
+      <div class="feature-title">AI Roleplay Scenarios</div>
+      <div class="feature-desc">Practice real situations with AI before they happen. Traffic stops, drug searches, domestic calls — 108 scenarios.</div>
     </div>
     <div class="feature-card">
-      <div class="feature-inner">
-        <div class="feature-icon">🧠</div>
-        <div class="feature-title">State-Specific Quizzes</div>
-        <div class="feature-desc">Test your knowledge with questions written for your exact jurisdiction, backed by actual legislation.</div>
-      </div>
+      <div class="feature-icon">&#129504;</div>
+      <div class="feature-title">State-Specific Quizzes</div>
+      <div class="feature-desc">Test your knowledge with questions written for your exact jurisdiction, backed by actual legislation.</div>
     </div>
     <div class="feature-card">
-      <div class="feature-inner">
-        <div class="feature-icon">📚</div>
-        <div class="feature-title">Real Case Law</div>
-        <div class="feature-desc">Petty v R, George v Rockett, R v Rondo and 68+ more — precedents that shape what police can actually do.</div>
-      </div>
+      <div class="feature-icon">&#128218;</div>
+      <div class="feature-title">Real Case Law</div>
+      <div class="feature-desc">Petty v R, George v Rockett, R v Rondo and 68+ more — precedents that shape what police can actually do.</div>
     </div>
     <div class="feature-card">
-      <div class="feature-inner">
-        <div class="feature-icon">🔒</div>
-        <div class="feature-title">Privacy Rights</div>
-        <div class="feature-desc">7 privacy topics across all 9 jurisdictions. Know what data police can access and when.</div>
-      </div>
+      <div class="feature-icon">&#128274;</div>
+      <div class="feature-title">Privacy Rights</div>
+      <div class="feature-desc">7 privacy topics across all 9 jurisdictions. Know what data police can access and when.</div>
     </div>
     <div class="feature-card">
-      <div class="feature-inner">
-        <div class="feature-icon">✨</div>
-        <div class="feature-title">Always Free</div>
-        <div class="feature-desc">No paywall, no subscription, no account required. Legal knowledge shouldn't cost anything.</div>
-      </div>
+      <div class="feature-icon">&#128994;</div>
+      <div class="feature-title">Always Free</div>
+      <div class="feature-desc">No paywall, no subscription, no account required. Legal knowledge shouldn't cost anything.</div>
     </div>
   </section>
 
   <section class="states">
     <h2>Your state. Your rights.</h2>
-    <p class="states-description">Tailored to every Australian jurisdiction</p>
     <div class="state-pills">
       <span class="pill">NSW</span>
       <span class="pill">VIC</span>
@@ -698,11 +510,11 @@
   </section>
 
   <section class="bottom-cta">
-    <img class="cta-shield" src="./shield.jpg" alt="Aussie Rights Kit" />
+    <img class="cta-shield" src="/public/logo.png" alt="KTH ARK" />
     <h2>Don't wait until you're in the back of a police car.</h2>
     <p>Takes 30 seconds to download. Could matter when it counts most.</p>
     <a class="btn-primary" href="https://play.google.com/store/apps/details?id=com.keepthemhonest.au" target="_blank" rel="noopener">
-      ↓ Get It Free on Google Play
+      &#9654; Get It Free on Google Play
     </a>
   </section>
 
