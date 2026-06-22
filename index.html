@@ -1,3 +1,13 @@
+<!-- HEADER logo -->
+<img src="./shield.jpg" alt="KTH ARK Logo" />
+
+<!-- SCALES section -->
+<img class="scales-logo" src="./scales.png" alt="Scales of Justice" />
+
+<!-- BOTTOM CTA shield -->
+<img class="cta-shield" src="./shield.jpg" alt="KTH ARK" />
+
+Full index.html with everything merged:
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,9 +26,7 @@
       --text:      #f2f2f2;
       --muted:     #8c8c8c;
       --accent:    #faa807;
-      --accent-dk: #d48e00;
       --border:    #292929;
-      --input:     #242424;
     }
 
     body {
@@ -28,7 +36,6 @@
       min-height: 100vh;
     }
 
-    /* ─── HEADER ─── */
     header {
       padding: 18px 28px;
       display: flex;
@@ -78,7 +85,6 @@
 
     .btn-small:hover { opacity: 0.88; }
 
-    /* ─── HERO ─── */
     .hero {
       text-align: center;
       padding: 80px 24px 60px;
@@ -109,10 +115,7 @@
       color: var(--text);
     }
 
-    h1 em {
-      font-style: normal;
-      color: var(--accent);
-    }
+    h1 em { font-style: normal; color: var(--accent); }
 
     .tagline-primary {
       font-size: clamp(15px, 2.2vw, 19px);
@@ -183,7 +186,6 @@
       opacity: 0.6;
     }
 
-    /* ─── SCALES ─── */
     .scales-section {
       text-align: center;
       padding: 64px 24px 60px;
@@ -210,8 +212,6 @@
     .scales-logo {
       width: 200px;
       height: auto;
-      filter: invert(1) sepia(1) saturate(4) hue-rotate(5deg) brightness(0.92);
-      mix-blend-mode: screen;
       margin: 0 auto 24px;
       display: block;
     }
@@ -224,10 +224,7 @@
       color: var(--accent);
     }
 
-    /* ─── STATS ─── */
-    .stats-wrap {
-      border-bottom: 1px solid var(--border);
-    }
+    .stats-wrap { border-bottom: 1px solid var(--border); }
 
     .stats {
       display: flex;
@@ -257,7 +254,6 @@
       font-weight: 600;
     }
 
-    /* ─── FEATURES ─── */
     .features {
       max-width: 840px;
       margin: 0 auto;
@@ -296,7 +292,6 @@
       line-height: 1.7;
     }
 
-    /* ─── STATES ─── */
     .states {
       text-align: center;
       padding: 0 24px 72px;
@@ -338,7 +333,6 @@
       border-color: var(--accent);
     }
 
-    /* ─── BOTTOM CTA ─── */
     .bottom-cta {
       text-align: center;
       padding: 72px 24px 88px;
@@ -380,7 +374,6 @@
       position: relative;
     }
 
-    /* ─── FOOTER ─── */
     footer {
       text-align: center;
       padding: 22px;
@@ -390,11 +383,7 @@
       border-top: 1px solid var(--border);
     }
 
-    footer a {
-      color: var(--accent);
-      opacity: 0.6;
-      text-decoration: none;
-    }
+    footer a { color: var(--accent); opacity: 0.6; text-decoration: none; }
 
     @media (max-width: 480px) {
       .stats { gap: 28px; }
@@ -405,10 +394,9 @@
 </head>
 <body>
 
-  <!-- HEADER -->
   <header>
     <div class="header-logo">
-      <img src="https://[key].r2.dev/company_44650/images/[key].jpg" alt="KTH ARK Logo" />
+      <img src="./shield.jpg" alt="KTH ARK Logo" />
       <div class="logo-text">Aussie<span>Rights</span>Kit</div>
     </div>
     <a class="btn-small" href="https://play.google.com/store/apps/details?id=com.keepthemhonest.au" target="_blank" rel="noopener">
@@ -416,7 +404,6 @@
     </a>
   </header>
 
-  <!-- HERO -->
   <section class="hero">
     <div class="badge">&#127462;&#127482; Free &middot; All 8 States &amp; Territories</div>
     <h1>Know your rights<br /><em>before</em> you need them</h1>
@@ -433,19 +420,13 @@
     </div>
   </section>
 
-  <!-- SCALES -->
   <section class="scales-section">
     <div class="scales-inner">
-      <img
-        class="scales-logo"
-        src="https://[key].r2.dev/company_44650/images/[key].png"
-        alt="Scales of Justice"
-      />
+      <img class="scales-logo" src="./scales.png" alt="Scales of Justice" />
       <p class="scales-slogan">Re-balancing the scales of justice.</p>
     </div>
   </section>
 
-  <!-- STATS -->
   <div class="stats-wrap">
     <div class="stats">
       <div class="stat">
@@ -467,7 +448,6 @@
     </div>
   </div>
 
-  <!-- FEATURES -->
   <section class="features">
     <div class="feature-card">
       <div class="feature-icon">&#9878;&#65039;</div>
@@ -501,7 +481,6 @@
     </div>
   </section>
 
-  <!-- STATES -->
   <section class="states">
     <h2>Your state. Your rights.</h2>
     <div class="state-pills">
@@ -516,13 +495,8 @@
     </div>
   </section>
 
-  <!-- BOTTOM CTA -->
   <section class="bottom-cta">
-    <img
-      class="cta-shield"
-      src="https://[key].r2.dev/company_44650/images/[key].jpg"
-      alt="KTH ARK"
-    />
+    <img class="cta-shield" src="./shield.jpg" alt="KTH ARK" />
     <h2>Don't wait until you're in the back of a police car.</h2>
     <p>Takes 30 seconds to download. Could matter when it counts most.</p>
     <a class="btn-primary" href="https://play.google.com/store/apps/details?id=com.keepthemhonest.au" target="_blank" rel="noopener">
@@ -536,3 +510,10 @@
 
 </body>
 </html>
+
+Three src changes:
+
+    ./shield.jpg — header logo + bottom CTA
+    ./scales.png — scales section
+
+Replace index.html, commit, done.
