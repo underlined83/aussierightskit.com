@@ -1,10 +1,3 @@
-I see what you're asking for now — the top logo in the header should be the KTH app icon we had originally, and the *middle* section should have the gold "scales of justice" icon centered right above the "Re-balancing the scales of justice" text.
-
-I have updated the code to pull a clean SVG of the balanced scales (since the old `.png` file was missing/broken on the live site) and applied an exact CSS filter so it renders perfectly in your gold accent color (`#faa807`) on the dark background. 
-
-Here is the correct code:
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -200,11 +193,8 @@ Here is the correct code:
     /* ── SCALES SECTION ── */
     .scales-section {
       text-align: center;
-      padding: 64px 24px 60px;
+      padding: 40px 24px 20px;
       position: relative;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      background: var(--card);
     }
 
     .scales-section::before {
@@ -222,14 +212,11 @@ Here is the correct code:
     }
 
     .scales-logo {
-      width: 120px;
-      height: 120px;
+      width: 220px;
+      height: auto;
       object-fit: contain;
-      margin: 0 auto 24px;
+      margin: 0 auto;
       display: block;
-      /* Removes white background and colors it gold */
-      mix-blend-mode: plus-lighter;
-      filter: invert(72%) sepia(85%) saturate(3054%) hue-rotate(357deg) brightness(102%) contrast(106%);
     }
 
     .scales-slogan {
@@ -241,7 +228,7 @@ Here is the correct code:
     }
 
     /* ── STATS ── */
-    .stats-wrap { border-bottom: 1px solid var(--border); }
+    .stats-wrap { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--card); }
 
     .stats {
       display: flex;
@@ -404,7 +391,6 @@ Here is the correct code:
     /* ── RESPONSIVE ── */
     @media (max-width: 480px) {
       .stats { gap: 28px; }
-      .scales-logo { width: 90px; height: 90px; }
       header { padding: 16px 18px; }
     }
   </style>
@@ -439,8 +425,7 @@ Here is the correct code:
 
   <section class="scales-section">
     <div class="scales-inner">
-      <img class="scales-logo" src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/solid/scale-balanced.svg" alt="Scales of Justice" />
-      <p class="scales-slogan">Re-balancing the scales of justice.</p>
+      <img class="scales-logo" src="https://keepthemhonestau.app/logo-hero.png" alt="Scales of Justice" />
     </div>
   </section>
 
@@ -526,4 +511,3 @@ Here is the correct code:
 
 </body>
 </html>
-```
