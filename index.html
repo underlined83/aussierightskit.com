@@ -69,6 +69,9 @@
       color: var(--accent);
       font-size: 12px;
       font-weight: 600;
+      background: rgba(250,168,7,0.15);
+      padding: 2px 4px;
+      border-radius: 4px;
     }
 
     .btn-small {
@@ -105,7 +108,7 @@
       font-size: 13px;
       padding: 6px 14px;
       border-radius: 20px;
-      margin-bottom: 24px;
+      margin-bottom: 32px;
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
@@ -115,21 +118,19 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      margin-bottom: 30px;
+      margin-bottom: 40px;
     }
 
     .scales-logo {
-      width: 120px;
-      height: 120px;
+      width: 160px; /* Matching the size from the app preview */
+      height: auto;
       margin-bottom: 24px;
     }
 
-    /* Target the SVG exactly to give it the gold color and shadow */
-    .scales-logo svg {
+    .scales-logo img {
       width: 100%;
-      height: 100%;
-      color: var(--accent);
-      filter: drop-shadow(0 4px 12px rgba(250,168,7,0.3));
+      height: auto;
+      object-fit: contain;
     }
 
     .ark-title {
@@ -187,7 +188,7 @@
       opacity: 0.9;
     }
 
-    /* ── DETAILED FEATURES (NEW) ── */
+    /* ── DETAILED FEATURES ── */
     .detailed-features {
       padding: 80px 24px;
       max-width: 1100px;
@@ -267,43 +268,44 @@
       justify-content: center;
     }
 
-    /* Placeholder for actual screenshots */
+    /* ── MOCKUPS ── */
     .mockup-placeholder {
       width: 100%;
-      max-width: 320px;
+      max-width: 300px;
       aspect-ratio: 9/19;
       background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 32px;
+      border: 10px solid #222;
+      border-radius: 40px;
       display: flex;
       align-items: center;
       justify-content: center;
       color: var(--muted);
       font-size: 14px;
       text-align: center;
-      padding: 20px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
       position: relative;
       overflow: hidden;
     }
 
-    /* Mockup internal UI elements for visual flair */
+    /* Dynamic Island Notch */
     .mockup-placeholder::before {
       content: '';
       position: absolute;
-      top: 0; left: 50%;
+      top: 8px; left: 50%;
       transform: translateX(-50%);
-      width: 120px; height: 24px;
-      background: var(--bg);
-      border-bottom-left-radius: 12px;
-      border-bottom-right-radius: 12px;
+      width: 90px; height: 26px;
+      background: #000;
+      border-radius: 14px;
+      z-index: 10;
     }
 
+    /* Make inserted images fill the phone screen */
     .mockup-placeholder img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      border-radius: 28px; /* Slightly less than parent */
+      object-fit: cover; /* or 'contain' if you prefer */
+      position: absolute;
+      top: 0; left: 0;
     }
 
     /* ── GRID FEATURES ── */
@@ -457,11 +459,8 @@
     <div class="badge">100% Free &amp; Offline-First</div>
     
     <div class="hero-logos">
-      <!-- FontAwesome Scale-Balanced inline SVG, colored dynamically -->
       <div class="scales-logo">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor">
-          <path d="M256 0c17.7 0 32 14.3 32 32V66.7C368.4 80.1 431.9 143.6 445.3 224H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H445.3C431.9 368.4 368.4 431.9 288 445.3V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V445.3C143.6 431.9 80.1 368.4 66.7 288H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H66.7C80.1 143.6 143.6 80.1 224 66.7V32c0-17.7 14.3-32 32-32zM128 256a128 128 0 1 0 256 0 128 128 0 1 0 -256 0zm128-80a80 80 0 1 1 0 160 80 80 0 1 1 0-160z"/>
-        </svg>
+        <img src="https://keepthemhonestau.app/logo-hero.png" alt="Scales of Justice" />
       </div>
       <div class="ark-title">ARK</div>
       <div class="ark-subtitle">Rebalancing the scales of JUSTICE</div>
@@ -477,7 +476,7 @@
 
   <section class="detailed-features">
     
-    <!-- Feature 1 -->
+    <!-- Feature 1: Emergency Sandbox -->
     <div class="feature-row">
       <div class="feature-text">
         <span class="feature-tag">Emergency Sandbox</span>
@@ -491,14 +490,12 @@
       </div>
       <div class="feature-image-container">
         <div class="mockup-placeholder">
-          <!-- TODO: Replace src with actual screenshot -->
           [Screenshot of Sandbox Mode toggled on]
-          <!-- <img src="./public/sandbox-screenshot.png" alt="Emergency Sandbox UI"> -->
         </div>
       </div>
     </div>
 
-    <!-- Feature 2 -->
+    <!-- Feature 2: AI Roleplay Arc -->
     <div class="feature-row reverse">
       <div class="feature-text">
         <span class="feature-tag">AI Roleplay Arc</span>
@@ -512,14 +509,12 @@
       </div>
       <div class="feature-image-container">
         <div class="mockup-placeholder">
-          <!-- TODO: Replace src with actual screenshot -->
           [Screenshot of AI Chat Interface]
-          <!-- <img src="./public/ai-chat-screenshot.png" alt="AI Chat Interface"> -->
         </div>
       </div>
     </div>
 
-    <!-- Feature 3 -->
+    <!-- Feature 3: Offline-First Resilience -->
     <div class="feature-row">
       <div class="feature-text">
         <span class="feature-tag">Offline-First Resilience</span>
@@ -533,9 +528,7 @@
       </div>
       <div class="feature-image-container">
         <div class="mockup-placeholder">
-          <!-- TODO: Replace src with actual screenshot -->
           [Screenshot of offline mode / legislation viewer]
-          <!-- <img src="./public/offline-screenshot.png" alt="Offline Mode UI"> -->
         </div>
       </div>
     </div>
