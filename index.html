@@ -1,3 +1,6 @@
+Here is the complete, updated code for the landing page (`landing.html`). It includes all the layout fixes, the removal of the redundant scales/shield imagery, and the updated header logo to exactly match your internal `KeepThemHonestAU` app branding.
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,8 +54,7 @@
       object-fit: contain;
       display: block;
       flex-shrink: 0;
-      /* Applied KTH gold branding filter */
-      filter: brightness(0) invert(0.65) sepia(1) saturate(5) hue-rotate(5deg);
+      border-radius: 8px;
     }
 
     .logo-text {
@@ -63,6 +65,14 @@
     }
 
     .logo-text span { color: var(--accent); }
+    
+    .logo-text::after {
+      content: 'AU';
+      margin-left: 4px;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 600;
+    }
 
     .btn-small {
       display: inline-flex;
@@ -208,13 +218,7 @@
     }
 
     .scales-logo {
-      width: 120px;
-      height: 120px;
-      object-fit: contain;
-      margin: 0 auto 24px;
-      display: block;
-      /* Applied KTH gold branding filter */
-      filter: brightness(0) invert(0.65) sepia(1) saturate(5) hue-rotate(5deg);
+      display: none;
     }
 
     .scales-slogan {
@@ -355,19 +359,7 @@
     }
 
     .cta-shield {
-      width: 68px;
-      height: 68px;
-      max-width: 68px;
-      max-height: 68px;
-      object-fit: contain;
-      border-radius: 14px;
-      margin-bottom: 22px;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      position: relative;
-      /* Applied KTH gold branding filter */
-      filter: brightness(0) invert(0.65) sepia(1) saturate(5) hue-rotate(5deg);
+      display: none;
     }
 
     .bottom-cta h2 {
@@ -401,7 +393,6 @@
     /* ── RESPONSIVE ── */
     @media (max-width: 480px) {
       .stats { gap: 28px; }
-      .scales-logo { width: 90px; height: 90px; }
       header { padding: 16px 18px; }
     }
   </style>
@@ -410,8 +401,8 @@
 
   <header>
     <div class="header-logo">
-      <img src="/public/logo.png" alt="KTH ARK Logo" />
-      <div class="logo-text">Aussie<span>Rights</span>Kit</div>
+      <img src="./public/icon-192.png" alt="Keep Them Honest AU Logo" />
+      <div class="logo-text">KeepThem<span>Honest</span></div>
     </div>
     <a class="btn-small" href="https://play.google.com/store/apps/details?id=com.keepthemhonest.au" target="_blank" rel="noopener">
       &#9654; Download Free
@@ -436,7 +427,6 @@
 
   <section class="scales-section">
     <div class="scales-inner">
-      <img class="scales-logo" src="/public/logo.png" alt="Scales of Justice" />
       <p class="scales-slogan">Re-balancing the scales of justice.</p>
     </div>
   </section>
@@ -510,7 +500,6 @@
   </section>
 
   <section class="bottom-cta">
-    <img class="cta-shield" src="/public/logo.png" alt="KTH ARK" />
     <h2>Don't wait until you're in the back of a police car.</h2>
     <p>Takes 30 seconds to download. Could matter when it counts most.</p>
     <a class="btn-primary" href="https://play.google.com/store/apps/details?id=com.keepthemhonest.au" target="_blank" rel="noopener">
@@ -524,3 +513,4 @@
 
 </body>
 </html>
+```
