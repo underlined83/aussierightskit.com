@@ -1,9 +1,3 @@
-I see the issue. When you load the HTML file on a completely separate domain or environment (like `aussierightskit.com`), relative paths like `/icon-192.png` fail because the image isn't hosted at the root of *that* domain.
-
-I have hardcoded the absolute URL to your live app's icon. This will force the logo to load directly from your primary app server regardless of where this HTML file is hosted.
-
-Here is the updated code block:
-
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -517,4 +511,4 @@ Here is the updated code block:
 
 </body>
 </html>
-```
+``
