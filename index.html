@@ -32,7 +32,7 @@
       align-items: center;
       justify-content: space-between;
       border-bottom: 1px solid var(--border);
-      max-width: 960px;
+      max-width: 1100px;
       margin: 0 auto;
       width: 100%;
     }
@@ -92,7 +92,7 @@
     .hero {
       text-align: center;
       padding: 100px 24px 80px;
-      max-width: 900px;
+      max-width: 1100px;
       margin: 0 auto;
     }
 
@@ -101,109 +101,108 @@
       background: rgba(250,168,7,0.1);
       border: 1px solid rgba(250,168,7,0.4);
       color: var(--accent);
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 1px;
-      padding: 6px 16px;
-      border-radius: 100px;
-      margin-bottom: 30px;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 24px;
       text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
 
-    h1 {
-      font-size: clamp(30px, 6vw, 52px);
-      font-weight: 900;
-      line-height: 1.08;
-      letter-spacing: -1.5px;
-      margin-bottom: 20px;
-      color: var(--text);
-    }
-
-    h1 em { font-style: normal; color: var(--accent); }
-
-    .tagline-primary {
-      font-size: clamp(15px, 2.2vw, 19px);
-      color: var(--accent);
-      font-weight: 600;
-      font-style: italic;
-      line-height: 1.5;
-      margin-bottom: 10px;
-    }
-
-    .tagline-secondary {
-      font-size: clamp(13px, 1.8vw, 16px);
-      color: var(--muted);
-      margin-bottom: 40px;
-    }
-
-    .cta-group {
+    .hero-logos {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 12px;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .scales-logo {
+      width: 120px;
+      height: 120px;
+      margin-bottom: 24px;
+    }
+
+    /* Target the SVG exactly to give it the gold color and shadow */
+    .scales-logo svg {
+      width: 100%;
+      height: 100%;
+      color: var(--accent);
+      filter: drop-shadow(0 4px 12px rgba(250,168,7,0.3));
+    }
+
+    .ark-title {
+      font-size: 56px;
+      font-weight: 900;
+      letter-spacing: -1px;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+    
+    .ark-subtitle {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      letter-spacing: -1px;
+      color: var(--text);
+    }
+
+    .hero p {
+      font-size: 19px;
+      line-height: 1.5;
+      color: var(--muted);
+      margin-bottom: 40px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .btn-primary {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 10px;
       background: var(--accent);
       color: var(--bg);
-      font-size: 16px;
-      font-weight: 900;
-      padding: 16px 36px;
-      border-radius: 10px;
+      font-size: 18px;
+      font-weight: 800;
+      padding: 16px 32px;
+      border-radius: 12px;
       text-decoration: none;
-      box-shadow: 0 6px 32px rgba(250,168,7,0.35);
-      transition: transform 0.15s, box-shadow 0.15s, opacity 0.15s;
+      transition: transform 0.2s, opacity 0.2s;
     }
 
     .btn-primary:hover {
       transform: translateY(-2px);
-      box-shadow: 0 10px 40px rgba(250,168,7,0.5);
-      opacity: 0.92;
+      opacity: 0.9;
     }
 
-    .btn-web {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: transparent;
-      border: 1px solid var(--border);
-      color: var(--muted);
-      font-size: 14px;
-      font-weight: 600;
-      padding: 12px 26px;
-      border-radius: 10px;
-      text-decoration: none;
-      transition: border-color 0.15s, color 0.15s;
-    }
-
-    .btn-web:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-    }
-
-    .free-note {
-      font-size: 12px;
-      color: var(--muted);
-      opacity: 0.6;
-    }
-
-    /* ── DETAILED FEATURES ── */
+    /* ── DETAILED FEATURES (NEW) ── */
     .detailed-features {
+      padding: 80px 24px;
       max-width: 1100px;
       margin: 0 auto;
-      padding: 100px 24px;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
     }
 
     .feature-row {
       display: flex;
       align-items: center;
-      gap: 80px;
-      margin-bottom: 120px;
+      gap: 60px;
+      margin-bottom: 100px;
     }
-
+    
     .feature-row:last-child {
       margin-bottom: 0;
     }
@@ -212,31 +211,30 @@
       flex-direction: row-reverse;
     }
 
-    .feature-content {
+    .feature-text {
       flex: 1;
     }
 
     .feature-tag {
       color: var(--accent);
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: 1px;
+      font-weight: 700;
+      font-size: 14px;
       text-transform: uppercase;
+      letter-spacing: 1px;
       margin-bottom: 12px;
       display: block;
     }
 
-    .feature-content h3 {
-      font-size: clamp(24px, 4vw, 36px);
+    .feature-text h3 {
+      font-size: 32px;
       font-weight: 800;
-      line-height: 1.1;
-      letter-spacing: -0.5px;
+      line-height: 1.2;
       margin-bottom: 16px;
-      color: var(--text);
+      letter-spacing: -0.5px;
     }
 
-    .feature-content p {
-      font-size: 16px;
+    .feature-text p {
+      font-size: 18px;
       line-height: 1.6;
       color: var(--muted);
       margin-bottom: 24px;
@@ -247,212 +245,120 @@
     }
 
     .feature-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
+      position: relative;
+      padding-left: 28px;
       margin-bottom: 12px;
-      font-size: 14px;
-      color: #d4d4d4;
+      font-size: 16px;
+      color: #ccc;
     }
 
     .feature-list li::before {
       content: '✓';
+      position: absolute;
+      left: 0;
+      top: 0;
       color: var(--accent);
-      font-weight: 900;
-      font-size: 14px;
+      font-weight: bold;
     }
 
-    .feature-image-wrapper {
+    .feature-image-container {
       flex: 1;
       display: flex;
       justify-content: center;
-      position: relative;
     }
 
-    .feature-image-mockup {
-      width: 280px;
-      height: 580px;
-      background: #111;
-      border: 6px solid #222;
-      border-radius: 36px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.5), 0 0 0 1px rgba(250,168,7,0.1);
-      position: relative;
-      overflow: hidden;
+    /* Placeholder for actual screenshots */
+    .mockup-placeholder {
+      width: 100%;
+      max-width: 320px;
+      aspect-ratio: 9/19;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 32px;
       display: flex;
       align-items: center;
       justify-content: center;
-    }
-
-    /* Optional glowing orb behind mockup */
-    .feature-image-wrapper::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 200px;
-      height: 200px;
-      background: var(--accent);
-      filter: blur(100px);
-      opacity: 0.15;
-      z-radius: 50%;
-      pointer-events: none;
-    }
-
-    .mockup-placeholder {
       color: var(--muted);
       font-size: 14px;
-      font-weight: 600;
       text-align: center;
       padding: 20px;
-      border: 1px dashed var(--border);
-      border-radius: 12px;
-    }
-
-    /* ── SCALES SECTION ── */
-    .scales-section {
-      text-align: center;
-      padding: 40px 24px 20px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
       position: relative;
+      overflow: hidden;
     }
 
-    .scales-section::before {
+    /* Mockup internal UI elements for visual flair */
+    .mockup-placeholder::before {
       content: '';
       position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at center, rgba(250,168,7,0.05) 0%, transparent 70%);
-      pointer-events: none;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 120px; height: 24px;
+      background: var(--bg);
+      border-bottom-left-radius: 12px;
+      border-bottom-right-radius: 12px;
     }
 
-    .scales-inner {
-      max-width: 520px;
-      margin: 0 auto;
-      position: relative;
-    }
-
-    .scales-logo {
-      width: 140px;
-      height: 140px;
-      margin: 0 auto 20px;
-      display: block;
-    }
-
-    .scales-logo svg {
+    .mockup-placeholder img {
       width: 100%;
       height: 100%;
-      color: var(--accent);
-      filter: drop-shadow(0 4px 12px rgba(250,168,7,0.3));
+      object-fit: cover;
+      border-radius: 28px; /* Slightly less than parent */
     }
 
-    .scales-text-logo {
-      font-size: 16px;
-      font-weight: 800;
-      color: var(--accent);
-      letter-spacing: -0.3px;
-      text-transform: uppercase;
-      border-bottom: 2px solid var(--accent);
-      padding-bottom: 4px;
-      display: inline-block;
-    }
-    
-    .scales-text-logo span {
-      font-weight: 500;
-      color: var(--text);
-      letter-spacing: 0;
-      text-transform: none;
-    }
-
-    .scales-slogan {
-      font-size: clamp(20px, 3.5vw, 30px);
-      font-weight: 800;
-      letter-spacing: -0.5px;
-      line-height: 1.2;
-      color: var(--accent);
-    }
-
-    /* ── STATS ── */
-    .stats-wrap { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--card); }
-
-    .stats {
-      display: flex;
-      justify-content: center;
-      gap: 80px;
-      flex-wrap: wrap;
-      padding: 64px 24px;
-      max-width: 960px;
-      margin: 0 auto;
-    }
-
-    .stat { text-align: center; }
-
-    .stat-number {
-      font-size: 36px;
-      font-weight: 900;
-      letter-spacing: -1px;
-      color: var(--accent);
-    }
-
-    .stat-label {
-      font-size: 12px;
-      color: var(--muted);
-      margin-top: 5px;
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-      font-weight: 600;
-    }
-
-    /* ── FEATURES ── */
-    .features {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 80px 24px;
+    /* ── GRID FEATURES ── */
+    .features-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 20px;
+      gap: 32px;
+      padding: 80px 24px;
+      max-width: 1100px;
+      margin: 0 auto;
     }
 
     .feature-card {
       background: var(--card);
       border: 1px solid var(--border);
-      border-left: 3px solid var(--accent);
-      border-radius: 12px;
-      padding: 32px 28px;
-      transition: border-color 0.2s, transform 0.2s;
+      padding: 32px;
+      border-radius: 16px;
+      transition: transform 0.2s, border-color 0.2s;
     }
 
     .feature-card:hover {
+      transform: translateY(-4px);
       border-color: var(--accent);
-      transform: translateY(-3px);
     }
 
-    .feature-icon { font-size: 26px; margin-bottom: 14px; }
+    .feature-icon {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: var(--accent);
+    }
 
     .feature-title {
-      font-size: 15px;
+      font-size: 20px;
       font-weight: 700;
-      margin-bottom: 8px;
-      color: var(--text);
+      margin-bottom: 12px;
     }
 
     .feature-desc {
-      font-size: 13px;
       color: var(--muted);
-      line-height: 1.7;
+      font-size: 15px;
+      line-height: 1.6;
     }
 
-    /* ── STATES ── */
+    /* ── STATES SECTION ── */
     .states {
       text-align: center;
-      padding: 0 24px 72px;
+      padding: 60px 24px;
+      background: var(--card);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
     }
 
     .states h2 {
-      font-size: 18px;
-      font-weight: 700;
-      margin-bottom: 18px;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 1px;
+      font-size: 24px;
+      margin-bottom: 24px;
     }
 
     .state-pills {
@@ -460,93 +366,78 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 12px;
-      max-width: 600px;
+      max-width: 800px;
       margin: 0 auto;
     }
 
     .pill {
       background: var(--muted-bg);
       border: 1px solid var(--border);
-      padding: 10px 24px;
-      border-radius: 100px;
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-weight: 700;
       font-size: 14px;
-      font-weight: 800;
-      color: var(--accent);
-      letter-spacing: 0.8px;
-      transition: background 0.15s, border-color 0.15s;
-      cursor: default;
-    }
-
-    .pill:hover {
-      background: rgba(250,168,7,0.08);
-      border-color: var(--accent);
+      color: var(--muted);
     }
 
     /* ── BOTTOM CTA ── */
     .bottom-cta {
       text-align: center;
-      padding: 72px 24px 88px;
-      background: var(--card);
-      border-top: 1px solid var(--border);
-      position: relative;
-    }
-
-    .bottom-cta::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at 50% 0%, rgba(250,168,7,0.06) 0%, transparent 65%);
-      pointer-events: none;
-    }
-
-    .cta-shield {
-      display: none;
+      padding: 100px 24px;
+      max-width: 900px;
+      margin: 0 auto;
     }
 
     .bottom-cta h2 {
-      font-size: clamp(22px, 4vw, 36px);
-      font-weight: 900;
-      margin-bottom: 12px;
-      letter-spacing: -0.8px;
-      color: var(--text);
-      position: relative;
+      font-size: 36px;
+      font-weight: 800;
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
     }
 
     .bottom-cta p {
       color: var(--muted);
-      margin-bottom: 34px;
-      font-size: 15px;
-      position: relative;
+      font-size: 18px;
+      margin-bottom: 32px;
     }
 
     /* ── FOOTER ── */
     footer {
       text-align: center;
-      padding: 22px;
-      font-size: 12px;
-      color: var(--muted);
-      opacity: 0.5;
+      padding: 40px 24px;
       border-top: 1px solid var(--border);
+      color: #555;
+      font-size: 14px;
+    }
+    
+    footer a {
+      color: #555;
+      text-decoration: underline;
     }
 
-    footer a { color: var(--accent); opacity: 0.6; text-decoration: none; }
-
-    /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
       .feature-row, .feature-row.reverse {
         flex-direction: column;
         gap: 40px;
         text-align: center;
       }
+      
       .feature-list li {
-        justify-content: center;
         text-align: left;
+        display: inline-block;
+        width: 100%;
+      }
+
+      .mockup-placeholder {
+        max-width: 260px;
       }
     }
-
-    @media (max-width: 480px) {
-      .stats { gap: 28px; }
-      header { padding: 16px 18px; }
+    
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 32px; }
+      .bottom-cta h2 { font-size: 28px; }
+      .feature-text h3 { font-size: 26px; }
+      .ark-title { font-size: 42px; }
     }
   </style>
 </head>
@@ -554,133 +445,108 @@
 
   <header>
     <div class="header-logo">
-      <img src="https://keepthemhonestau.app/icon-192.png" alt="Keep Them Honest AU Logo" onerror="this.src='https://keepthemhonestau.app/icon-192.png'" />
-      <div class="logo-text">KeepThem<span>Honest</span></div>
+      <img src="https://keepthemhonestau.app/icon-192.png" alt="Keep Them Honest Logo" />
+      <div class="logo-text">KeepThemHonest</div>
     </div>
-    <a class="btn-small" href="https://play.google.com/store/apps/details?id=com.keepthemhonest.au" target="_blank" rel="noopener">
-      &#9654; Download Free
+    <a href="https://play.google.com/store/apps/details?id=com.keepthemhonest.au" class="btn-small" target="_blank" rel="noopener">
+      Get the App
     </a>
   </header>
 
   <section class="hero">
-    <div class="badge">&#127462;&#127482; Free &middot; All 8 States &amp; Territories</div>
-    <h1>Know your rights<br /><em>before</em> you need them</h1>
-    <p class="tagline-primary">&ldquo;When you know the rules, the game gets easier.&rdquo;</p>
-    <p class="tagline-secondary">Know your rights when interacting with police.</p>
-    <div class="cta-group">
-      <a class="btn-primary" href="https://play.google.com/store/apps/details?id=com.keepthemhonest.au" target="_blank" rel="noopener">
-        &#9654; Download on Google Play
-      </a>
-      <a class="btn-web" href="https://keepthemhonestau.app" target="_blank" rel="noopener">
-        Open Web App &rarr;
-      </a>
-      <span class="free-note">Free download &middot; No account required</span>
+    <div class="badge">100% Free &amp; Offline-First</div>
+    
+    <div class="hero-logos">
+      <!-- FontAwesome Scale-Balanced inline SVG, colored dynamically -->
+      <div class="scales-logo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor">
+          <path d="M256 0c17.7 0 32 14.3 32 32V66.7C368.4 80.1 431.9 143.6 445.3 224H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H445.3C431.9 368.4 368.4 431.9 288 445.3V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V445.3C143.6 431.9 80.1 368.4 66.7 288H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H66.7C80.1 143.6 143.6 80.1 224 66.7V32c0-17.7 14.3-32 32-32zM128 256a128 128 0 1 0 256 0 128 128 0 1 0 -256 0zm128-80a80 80 0 1 1 0 160 80 80 0 1 1 0-160z"/>
+        </svg>
+      </div>
+      <div class="ark-title">ARK</div>
+      <div class="ark-subtitle">Rebalancing the scales of JUSTICE</div>
     </div>
+
+    <h1>The Police Have a Playbook.<br />Now You Do Too.</h1>
+    <p>A pocket legal toolkit for every Australian state and territory. Know exactly what police can do during stops, searches, and questioning—before it happens.</p>
+    
+    <a class="btn-primary" href="https://play.google.com/store/apps/details?id=com.keepthemhonest.au" target="_blank" rel="noopener">
+      Download App
+    </a>
   </section>
 
-  <!-- Detailed Features Section -->
   <section class="detailed-features">
     
     <!-- Feature 1 -->
     <div class="feature-row">
-      <div class="feature-content">
+      <div class="feature-text">
         <span class="feature-tag">Emergency Sandbox</span>
-        <h3>Build muscle memory before the adrenaline hits.</h3>
-        <p>You have the right to silence, but remembering it while an officer is shining a torch in your eyes is entirely different. Our sandbox lets you practice high-stakes tools without real-world consequences.</p>
+        <h3>Build muscle memory for high-stress situations.</h3>
+        <p>Under pressure, it's easy to freeze or make a mistake. The Emergency Sandbox mode lets you safely practice critical app functions—like triggering an SOS or starting a secure recording—without actually alerting contacts or saving files.</p>
         <ul class="feature-list">
-          <li>Simulate silent SOS broadcasts to emergency contacts</li>
-          <li>Practice discrete audio recording in hostile environments</li>
-          <li>Test the "Panic Mode" AI rights summariser</li>
-          <li>Zero risk — completely isolated from the live network</li>
+          <li>Familiarize yourself with UI under pressure</li>
+          <li>Practice safe-word activations safely</li>
+          <li>Test hardware button triggers without real-world consequences</li>
         </ul>
       </div>
-      <div class="feature-image-wrapper">
-        <div class="feature-image-mockup">
-          <div class="mockup-placeholder">Insert App Screenshot<br/><br/>(e.g., Emergency Setup Screen)</div>
+      <div class="feature-image-container">
+        <div class="mockup-placeholder">
+          <!-- TODO: Replace src with actual screenshot -->
+          [Screenshot of Sandbox Mode toggled on]
+          <!-- <img src="./public/sandbox-screenshot.png" alt="Emergency Sandbox UI"> -->
         </div>
       </div>
     </div>
 
-    <!-- Feature 2: Reversed layout -->
+    <!-- Feature 2 -->
     <div class="feature-row reverse">
-      <div class="feature-content">
+      <div class="feature-text">
         <span class="feature-tag">AI Roleplay Arc</span>
-        <h3>Train against aggressive, neutral, and procedural AI officers.</h3>
-        <p>Knowing the law isn't enough; you must know how to assert it. Our AI Roleplay simulates 108 highly-specific scenarios with officers dynamically adapting to your tone.</p>
+        <h3>Practice your rights against a relentless AI interrogator.</h3>
+        <p>Knowing your rights on paper isn't enough when an officer is in your face. Our AI Roleplay Arc uses specialized prompts to simulate aggressive questioning, tricky phrasing, and escalating traffic stops.</p>
         <ul class="feature-list">
-          <li>Interact with 20 distinct officer personality combinations</li>
-          <li>Live 'Pressure Meter' tracks encounter escalation</li>
-          <li>Phase-aware logic (Approach &rarr; Interrogation &rarr; Resolution)</li>
-          <li>Detailed debrief grading your rights-assertion performance</li>
+          <li>Simulates real-world police psychological tactics</li>
+          <li>Get instant feedback on what you said wrong</li>
+          <li>108+ scenarios across all Australian jurisdictions</li>
         </ul>
       </div>
-      <div class="feature-image-wrapper">
-        <div class="feature-image-mockup">
-          <div class="mockup-placeholder">Insert App Screenshot<br/><br/>(e.g., AI Roleplay Chat)</div>
+      <div class="feature-image-container">
+        <div class="mockup-placeholder">
+          <!-- TODO: Replace src with actual screenshot -->
+          [Screenshot of AI Chat Interface]
+          <!-- <img src="./public/ai-chat-screenshot.png" alt="AI Chat Interface"> -->
         </div>
       </div>
     </div>
 
     <!-- Feature 3 -->
     <div class="feature-row">
-      <div class="feature-content">
+      <div class="feature-text">
         <span class="feature-tag">Offline-First Resilience</span>
-        <h3>Your rights don't require an internet connection.</h3>
-        <p>Designed for environments with poor connectivity or active signal blocking. The core constitutional and state-level rights data is always available on-device.</p>
+        <h3>Works when you have zero signal and zero time.</h3>
+        <p>The app is built specifically for hostile environments where cell service might be blocked, dropped, or unavailable. Your essential rights, case law, and emergency tools are stored securely on your device.</p>
         <ul class="feature-list">
-          <li>Access the full 189+ rights database without a network</li>
-          <li>Offline-ready Edge AI inference via WebGPU</li>
-          <li>View case-law precedents and state legislation anywhere</li>
-          <li>Persistent secure local storage for collected evidence</li>
+          <li>Access case law and state legislation offline</li>
+          <li>No cloud dependency for core functionality</li>
+          <li>Designed for high-adrenaline, low-bandwidth situations</li>
         </ul>
       </div>
-      <div class="feature-image-wrapper">
-        <div class="feature-image-mockup">
-          <div class="mockup-placeholder">Insert App Screenshot<br/><br/>(e.g., Offline Rights List)</div>
+      <div class="feature-image-container">
+        <div class="mockup-placeholder">
+          <!-- TODO: Replace src with actual screenshot -->
+          [Screenshot of offline mode / legislation viewer]
+          <!-- <img src="./public/offline-screenshot.png" alt="Offline Mode UI"> -->
         </div>
       </div>
     </div>
 
   </section>
 
-  <section class="scales-section">
-    <div class="scales-inner">
-      <div class="scales-logo">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor">
-          <!-- FontAwesome Scale-Balanced SVG -->
-          <path d="M256 0c17.7 0 32 14.3 32 32V66.7C368.4 80.1 431.9 143.6 445.3 224H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H445.3C431.9 368.4 368.4 431.9 288 445.3V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V445.3C143.6 431.9 80.1 368.4 66.7 288H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H66.7C80.1 143.6 143.6 80.1 224 66.7V32c0-17.7 14.3-32 32-32zM128 256c0-70.7 57.3-128 128-128s128 57.3 128 128s-57.3 128-128 128s-128-57.3-128-128zm128 80a80 80 0 1 0 0-160 80 80 0 1 0 0 160z"/>
-        </svg>
-      </div>
-      <div class="scales-text-logo">ARK <span>Rebalancing the scales of</span> JUSTICE.</div>
-    </div>
-  </section>
-
-  <div class="stats-wrap">
-    <div class="stats">
-      <div class="stat">
-        <div class="stat-number">189+</div>
-        <div class="stat-label">Rights Explained</div>
-      </div>
-      <div class="stat">
-        <div class="stat-number">108</div>
-        <div class="stat-label">Real Scenarios</div>
-      </div>
-      <div class="stat">
-        <div class="stat-number">513</div>
-        <div class="stat-label">Quiz Questions</div>
-      </div>
-      <div class="stat">
-        <div class="stat-number">71+</div>
-        <div class="stat-label">Case Law Precedents</div>
-      </div>
-    </div>
-  </div>
-
-  <section class="features">
+  <section class="features-grid">
     <div class="feature-card">
-      <div class="feature-icon">&#9878;&#65039;</div>
-      <div class="feature-title">Deep-Dive Rights</div>
-      <div class="feature-desc">CAN DO / CAN'T DO breakdowns for every police interaction — traffic stops, searches, arrests, protests and more.</div>
+      <div class="feature-icon">&#128680;</div>
+      <div class="feature-title">Stop &amp; Search Rights</div>
+      <div class="feature-desc">Clear, simple answers on when you have to provide ID, when your car can be searched, and more.</div>
     </div>
     <div class="feature-card">
       <div class="feature-icon">&#127917;</div>
