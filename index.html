@@ -1,4 +1,6 @@
-Here is the complete, updated code for the landing page (`landing.html`). It includes all the layout fixes, the removal of the redundant scales/shield imagery, and the updated header logo to exactly match your internal `KeepThemHonestAU` app branding.
+I've fixed the image source issue. When deploying a standalone HTML file on a domain like yours, absolute root paths (`/icon-192.png`) are required rather than relative file-system paths (`./public/icon-192.png`). I've also added an `onerror` fallback just in case it's hosted completely independently from the main app root.
+
+Here is the fully fixed code for you to copy and paste:
 
 ```html
 <!DOCTYPE html>
@@ -393,6 +395,7 @@ Here is the complete, updated code for the landing page (`landing.html`). It inc
     /* ── RESPONSIVE ── */
     @media (max-width: 480px) {
       .stats { gap: 28px; }
+      .scales-logo { width: 90px; height: 90px; }
       header { padding: 16px 18px; }
     }
   </style>
@@ -401,7 +404,7 @@ Here is the complete, updated code for the landing page (`landing.html`). It inc
 
   <header>
     <div class="header-logo">
-      <img src="./public/icon-192.png" alt="Keep Them Honest AU Logo" />
+      <img src="/icon-192.png" alt="Keep Them Honest AU Logo" onerror="this.src='https://keepthemhonestau.app/icon-192.png'" />
       <div class="logo-text">KeepThem<span>Honest</span></div>
     </div>
     <a class="btn-small" href="https://play.google.com/store/apps/details?id=com.keepthemhonest.au" target="_blank" rel="noopener">
