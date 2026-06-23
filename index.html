@@ -1,3 +1,10 @@
+I see what you're asking for now — the top logo in the header should be the KTH app icon we had originally, and the *middle* section should have the gold "scales of justice" icon centered right above the "Re-balancing the scales of justice" text.
+
+I have updated the code to pull a clean SVG of the balanced scales (since the old `.png` file was missing/broken on the live site) and applied an exact CSS filter so it renders perfectly in your gold accent color (`#faa807`) on the dark background. 
+
+Here is the correct code:
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,10 +51,31 @@
     }
 
     .header-logo img {
-      height: 38px;
+      width: 44px;
+      height: 44px;
+      max-width: 44px;
+      max-height: 44px;
       object-fit: contain;
       display: block;
-      border-radius: 0;
+      flex-shrink: 0;
+      border-radius: 8px;
+    }
+
+    .logo-text {
+      font-size: 17px;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      color: var(--text);
+    }
+
+    .logo-text span { color: var(--accent); }
+    
+    .logo-text::after {
+      content: 'AU';
+      margin-left: 4px;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 600;
     }
 
     .btn-small {
@@ -190,43 +218,7 @@
     .scales-inner {
       max-width: 520px;
       margin: 0 auto;
-      position: relative;```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aussie Rights Kit — Know Your Rights Before You Need Them</title>
-  <meta name="description" content="Free Australian legal rights app. Know exactly what police can and can't do in your state — before you need it." />
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    :root {
-      --bg:        #0a0a0a;
-      --card:      #141414;
-      --muted-bg:  #1f1f1f;
-      --text:      #f2f2f2;
-      --muted:     #8c8c8c;
-      --accent:    #faa807;
-      --border:    #292929;
-    }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      min-height: 100vh;
-    }
-
-    /* ── HEADER ── */
-    header {
-      padding: 18px 28px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-bottom: 1px solid var(--border);
-      max-width: 960px;
-
+      position: relative;
     }
 
     .scales-logo {
@@ -235,8 +227,9 @@
       object-fit: contain;
       margin: 0 auto 24px;
       display: block;
-      mix-blend-mode: screen;
-      filter: brightness(0) invert(0.65) sepia(1) saturate(5) hue-rotate(5deg);
+      /* Removes white background and colors it gold */
+      mix-blend-mode: plus-lighter;
+      filter: invert(72%) sepia(85%) saturate(3054%) hue-rotate(357deg) brightness(102%) contrast(106%);
     }
 
     .scales-slogan {
@@ -420,7 +413,8 @@
 
   <header>
     <div class="header-logo">
-      <img src="https://keepthemhonestau.app/logo-hero.png" alt="Keep Them Honest AU Logo" style="width: auto; height: 38px; max-width: none;" />
+      <img src="https://keepthemhonestau.app/icon-192.png" alt="Keep Them Honest AU Logo" onerror="this.src='https://keepthemhonestau.app/icon-192.png'" />
+      <div class="logo-text">KeepThem<span>Honest</span></div>
     </div>
     <a class="btn-small" href="https://play.google.com/store/apps/details?id=com.keepthemhonest.au" target="_blank" rel="noopener">
       &#9654; Download Free
@@ -445,7 +439,7 @@
 
   <section class="scales-section">
     <div class="scales-inner">
-      <img class="scales-logo" src="https://keepthemhonestau.app/scales.png" alt="Scales of Justice" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Scales_of_justice_icon.svg/512px-Scales_of_justice_icon.svg.png'" />
+      <img class="scales-logo" src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/solid/scale-balanced.svg" alt="Scales of Justice" />
       <p class="scales-slogan">Re-balancing the scales of justice.</p>
     </div>
   </section>
@@ -466,4 +460,70 @@
       </div>
       <div class="stat">
         <div class="stat-number">71+</div>
-        <div class="stat-label">Case Law Precedents
+        <div class="stat-label">Case Law Precedents</div>
+      </div>
+    </div>
+  </div>
+
+  <section class="features">
+    <div class="feature-card">
+      <div class="feature-icon">&#9878;&#65039;</div>
+      <div class="feature-title">Deep-Dive Rights</div>
+      <div class="feature-desc">CAN DO / CAN'T DO breakdowns for every police interaction — traffic stops, searches, arrests, protests and more.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">&#127917;</div>
+      <div class="feature-title">AI Roleplay Scenarios</div>
+      <div class="feature-desc">Practice real situations with AI before they happen. Traffic stops, drug searches, domestic calls — 108 scenarios.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">&#129504;</div>
+      <div class="feature-title">State-Specific Quizzes</div>
+      <div class="feature-desc">Test your knowledge with questions written for your exact jurisdiction, backed by actual legislation.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">&#128218;</div>
+      <div class="feature-title">Real Case Law</div>
+      <div class="feature-desc">Petty v R, George v Rockett, R v Rondo and 68+ more — precedents that shape what police can actually do.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">&#128274;</div>
+      <div class="feature-title">Privacy Rights</div>
+      <div class="feature-desc">7 privacy topics across all 9 jurisdictions. Know what data police can access and when.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">&#128994;</div>
+      <div class="feature-title">Always Free</div>
+      <div class="feature-desc">No paywall, no subscription, no account required. Legal knowledge shouldn't cost anything.</div>
+    </div>
+  </section>
+
+  <section class="states">
+    <h2>Your state. Your rights.</h2>
+    <div class="state-pills">
+      <span class="pill">NSW</span>
+      <span class="pill">VIC</span>
+      <span class="pill">QLD</span>
+      <span class="pill">WA</span>
+      <span class="pill">SA</span>
+      <span class="pill">TAS</span>
+      <span class="pill">ACT</span>
+      <span class="pill">NT</span>
+    </div>
+  </section>
+
+  <section class="bottom-cta">
+    <h2>Don't wait until you're in the back of a police car.</h2>
+    <p>Takes 30 seconds to download. Could matter when it counts most.</p>
+    <a class="btn-primary" href="https://play.google.com/store/apps/details?id=com.keepthemhonest.au" target="_blank" rel="noopener">
+      &#9654; Get It Free on Google Play
+    </a>
+  </section>
+
+  <footer>
+    <p>Keep Them Honest AU &middot; For general information only &middot; Not legal advice &middot; <a href="#">Privacy</a></p>
+  </footer>
+
+</body>
+</html>
+```
