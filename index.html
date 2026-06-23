@@ -1,6 +1,8 @@
-I've fixed the image source issue. When deploying a standalone HTML file on a domain like yours, absolute root paths (`/icon-192.png`) are required rather than relative file-system paths (`./public/icon-192.png`). I've also added an `onerror` fallback just in case it's hosted completely independently from the main app root.
+I see the issue. When you load the HTML file on a completely separate domain or environment (like `aussierightskit.com`), relative paths like `/icon-192.png` fail because the image isn't hosted at the root of *that* domain.
 
-Here is the fully fixed code for you to copy and paste:
+I have hardcoded the absolute URL to your live app's icon. This will force the logo to load directly from your primary app server regardless of where this HTML file is hosted.
+
+Here is the updated code block:
 
 ```html
 <!DOCTYPE html>
@@ -395,7 +397,6 @@ Here is the fully fixed code for you to copy and paste:
     /* ── RESPONSIVE ── */
     @media (max-width: 480px) {
       .stats { gap: 28px; }
-      .scales-logo { width: 90px; height: 90px; }
       header { padding: 16px 18px; }
     }
   </style>
@@ -404,7 +405,7 @@ Here is the fully fixed code for you to copy and paste:
 
   <header>
     <div class="header-logo">
-      <img src="/icon-192.png" alt="Keep Them Honest AU Logo" onerror="this.src='https://keepthemhonestau.app/icon-192.png'" />
+      <img src="https://keepthemhonestau.app/icon-192.png" alt="Keep Them Honest AU Logo" />
       <div class="logo-text">KeepThem<span>Honest</span></div>
     </div>
     <a class="btn-small" href="https://play.google.com/store/apps/details?id=com.keepthemhonest.au" target="_blank" rel="noopener">
