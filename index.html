@@ -219,14 +219,6 @@
       display: block;
     }
 
-    .scales-slogan {
-      font-size: clamp(20px, 3.5vw, 30px);
-      font-weight: 800;
-      letter-spacing: -0.5px;
-      line-height: 1.2;
-      color: var(--accent);
-    }
-
     /* ── STATS ── */
     .stats-wrap { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--card); }
 
@@ -258,7 +250,7 @@
       font-weight: 600;
     }
 
-    /* ── FEATURES ── */
+    /* ── FEATURES GRID ── */
     .features {
       max-width: 840px;
       margin: 0 auto;
@@ -295,6 +287,60 @@
       font-size: 13px;
       color: var(--muted);
       line-height: 1.7;
+    }
+
+    /* ── DETAILED SHOWCASE ── */
+    .feature-showcase {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+      display: flex;
+      flex-direction: column;
+      gap: 80px;
+    }
+
+    .showcase-row {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .showcase-row:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .showcase-content {
+      flex: 1;
+    }
+
+    .showcase-title {
+      font-size: 32px;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      color: var(--text);
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+
+    .showcase-title span { color: var(--accent); }
+
+    .showcase-desc {
+      font-size: 16px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .showcase-visual {
+      flex: 1;
+      background: linear-gradient(135deg, rgba(250,168,7,0.1) 0%, rgba(20,20,20,1) 100%);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      aspect-ratio: 4/3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 80px;
+      box-shadow: inset 0 0 40px rgba(0,0,0,0.5);
     }
 
     /* ── STATES ── */
@@ -356,10 +402,6 @@
       pointer-events: none;
     }
 
-    .cta-shield {
-      display: none;
-    }
-
     .bottom-cta h2 {
       font-size: clamp(22px, 4vw, 36px);
       font-weight: 900;
@@ -389,125 +431,4 @@
     footer a { color: var(--accent); opacity: 0.6; text-decoration: none; }
 
     /* ── RESPONSIVE ── */
-    @media (max-width: 480px) {
-      .stats { gap: 28px; }
-      header { padding: 16px 18px; }
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    <div class="header-logo">
-      <img src="https://keepthemhonestau.app/icon-192.png" alt="Keep Them Honest AU Logo" onerror="this.src='https://keepthemhonestau.app/icon-192.png'" />
-      <div class="logo-text">KeepThem<span>Honest</span></div>
-    </div>
-    <a class="btn-small" href="https://play.google.com/store/apps/details?id=com.keepthemhonest.au" target="_blank" rel="noopener">
-      &#9654; Download Free
-    </a>
-  </header>
-
-  <section class="hero">
-    <div class="badge">&#127462;&#127482; Free &middot; All 8 States &amp; Territories</div>
-    <h1>Know your rights<br /><em>before</em> you need them</h1>
-    <p class="tagline-primary">&ldquo;When you know the rules, the game gets easier.&rdquo;</p>
-    <p class="tagline-secondary">Know your rights when interacting with police.</p>
-    <div class="cta-group">
-      <a class="btn-primary" href="https://play.google.com/store/apps/details?id=com.keepthemhonest.au" target="_blank" rel="noopener">
-        &#9654; Download on Google Play
-      </a>
-      <a class="btn-web" href="https://keepthemhonestau.app" target="_blank" rel="noopener">
-        Open Web App &rarr;
-      </a>
-      <span class="free-note">Free download &middot; No account required</span>
-    </div>
-  </section>
-
-  <section class="scales-section">
-    <div class="scales-inner">
-      <img class="scales-logo" src="https://keepthemhonestau.app/logo-hero.png" alt="Scales of Justice" />
-    </div>
-  </section>
-
-  <div class="stats-wrap">
-    <div class="stats">
-      <div class="stat">
-        <div class="stat-number">189+</div>
-        <div class="stat-label">Rights Explained</div>
-      </div>
-      <div class="stat">
-        <div class="stat-number">108</div>
-        <div class="stat-label">Real Scenarios</div>
-      </div>
-      <div class="stat">
-        <div class="stat-number">513</div>
-        <div class="stat-label">Quiz Questions</div>
-      </div>
-      <div class="stat">
-        <div class="stat-number">71+</div>
-        <div class="stat-label">Case Law Precedents</div>
-      </div>
-    </div>
-  </div>
-
-  <section class="features">
-    <div class="feature-card">
-      <div class="feature-icon">&#9878;&#65039;</div>
-      <div class="feature-title">Deep-Dive Rights</div>
-      <div class="feature-desc">CAN DO / CAN'T DO breakdowns for every police interaction — traffic stops, searches, arrests, protests and more.</div>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">&#127917;</div>
-      <div class="feature-title">AI Roleplay Scenarios</div>
-      <div class="feature-desc">Practice real situations with AI before they happen. Traffic stops, drug searches, domestic calls — 108 scenarios.</div>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">&#129504;</div>
-      <div class="feature-title">State-Specific Quizzes</div>
-      <div class="feature-desc">Test your knowledge with questions written for your exact jurisdiction, backed by actual legislation.</div>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">&#128218;</div>
-      <div class="feature-title">Real Case Law</div>
-      <div class="feature-desc">Petty v R, George v Rockett, R v Rondo and 68+ more — precedents that shape what police can actually do.</div>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">&#128274;</div>
-      <div class="feature-title">Privacy Rights</div>
-      <div class="feature-desc">7 privacy topics across all 9 jurisdictions. Know what data police can access and when.</div>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">&#128994;</div>
-      <div class="feature-title">Always Free</div>
-      <div class="feature-desc">No paywall, no subscription, no account required. Legal knowledge shouldn't cost anything.</div>
-    </div>
-  </section>
-
-  <section class="states">
-    <h2>Your state. Your rights.</h2>
-    <div class="state-pills">
-      <span class="pill">NSW</span>
-      <span class="pill">VIC</span>
-      <span class="pill">QLD</span>
-      <span class="pill">WA</span>
-      <span class="pill">SA</span>
-      <span class="pill">TAS</span>
-      <span class="pill">ACT</span>
-      <span class="pill">NT</span>
-    </div>
-  </section>
-
-  <section class="bottom-cta">
-    <h2>Don't wait until you're in the back of a police car.</h2>
-    <p>Takes 30 seconds to download. Could matter when it counts most.</p>
-    <a class="btn-primary" href="https://play.google.com/store/apps/details?id=com.keepthemhonest.au" target="_blank" rel="noopener">
-      &#9654; Get It Free on Google Play
-    </a>
-  </section>
-
-  <footer>
-    <p>Keep Them Honest AU &middot; For general information only &middot; Not legal advice &middot; <a href="#">Privacy</a></p>
-  </footer>
-
-</body>
-</html>
+    @media (max-width: 768px)
