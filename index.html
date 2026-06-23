@@ -670,6 +670,16 @@
       font-size: 16px;
     }
 
+    .section-eyebrow {
+      display: block;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
     .state-pills {
       display: flex;
       flex-wrap: wrap;
@@ -729,6 +739,11 @@
       font-size: 17px;
       max-width: 42ch;
       margin: 0 auto 26px;
+    }
+
+    .cta-actions {
+      justify-content: center;
+      margin-bottom: 0;
     }
 
     footer {
@@ -1101,7 +1116,7 @@
   <section class="section" id="coverage">
     <div class="coverage">
       <div class="coverage-card">
-        <span style="display:block;color:var(--accent);font-size:12px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:10px;">Coverage</span>
+        <span class="section-eyebrow">Coverage</span>
         <h3>Your state. Your rights.</h3>
         <p>
           The page now frames national coverage more clearly, reinforcing that the app is built around the differences
@@ -1128,7 +1143,7 @@
   <section class="section bottom-cta">
     <h2>Don't wait until you're under pressure to figure out your rights.</h2>
     <p>Takes seconds to download. Could matter when the situation is moving fast and clear thinking is hardest.</p>
-    <div class="hero-actions" style="justify-content:center;margin-bottom:0;">
+    <div class="hero-actions cta-actions">
       <a
         class="btn-primary"
         href="https://play.google.com/store/apps/details?id=com.keepthemhonest.au"
